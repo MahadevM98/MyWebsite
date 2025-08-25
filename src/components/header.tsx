@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, Code } from "lucide-react";
+import { Menu, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import Image from "next/image";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -22,10 +23,13 @@ export function Header() {
       <div className="container flex h-16 items-center justify-between">
         <Link
           href="#home"
-          className="flex items-center gap-2 font-bold"
+          className="flex items-center gap-3 font-bold"
         >
-          <Code className="h-6 w-6 text-primary" />
-          <span className="text-xl font-bold">Mahadev.IO</span>
+          <Image src="https://picsum.photos/40/40" alt="Mahadev M" width={40} height={40} className="rounded-full" data-ai-hint="professional headshot" />
+          <div>
+            <span className="text-lg font-bold">Mahadev M</span>
+            <p className="text-sm font-normal text-muted-foreground">Web Developer</p>
+          </div>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
@@ -41,9 +45,6 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2 md:hidden">
-           <Button asChild>
-              <Link href="#contact">Contact Me</Link>
-            </Button>
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
@@ -58,8 +59,11 @@ export function Header() {
                   className="flex items-center gap-2 font-bold"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <Code className="h-6 w-6 text-primary" />
-                  <span className="text-xl font-bold">Mahadev.IO</span>
+                  <Image src="https://picsum.photos/40/40" alt="Mahadev M" width={40} height={40} className="rounded-full" data-ai-hint="professional headshot" />
+                   <div>
+                    <span className="text-lg font-bold">Mahadev M</span>
+                    <p className="text-sm font-normal text-muted-foreground">Web Developer</p>
+                  </div>
                 </Link>
                 <div className="flex flex-col gap-4">
                   {navLinks.map((link) => (
@@ -72,6 +76,9 @@ export function Header() {
                       {link.label}
                     </Link>
                   ))}
+                   <Button asChild size="lg" className="mt-4">
+                      <Link href="#contact">Start a Project <ArrowRight className="ml-2"/></Link>
+                    </Button>
                 </div>
               </div>
             </SheetContent>
@@ -79,7 +86,7 @@ export function Header() {
         </div>
         <div className="hidden md:block">
            <Button asChild size="lg">
-              <Link href="#contact">Contact Me</Link>
+              <Link href="#contact">Start a Project <ArrowRight className="ml-2"/></Link>
             </Button>
         </div>
       </div>
