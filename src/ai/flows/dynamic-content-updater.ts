@@ -12,7 +12,9 @@
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 
-const DynamicContentUpdaterInputSchema = z.object({});
+const DynamicContentUpdaterInputSchema = z.object({
+  
+});
 export type DynamicContentUpdaterInput = z.infer<typeof DynamicContentUpdaterInputSchema>;
 
 const DynamicContentUpdaterOutputSchema = z.string();
@@ -26,7 +28,7 @@ const prompt = ai.definePrompt({
   name: 'dynamicContentUpdaterPrompt',
   input: {schema: DynamicContentUpdaterInputSchema},
   output: {schema: DynamicContentUpdaterOutputSchema},
-  prompt: `You are an AI-powered content updater for a personal website.  Your goal is to keep the website's content fresh and accurate by automatically updating it with the latest information from the website owner's professional profiles.
+  prompt: `You are an AI-powered content updater for a personal website. Your goal is to keep the website's content fresh and accurate by automatically updating it with the latest information from the website owner's professional profiles.
 
   Specifically, you will search for the latest certifications, project details, and skills from the following sources:
 
@@ -49,7 +51,7 @@ const dynamicContentUpdaterFlow = ai.defineFlow(
     outputSchema: DynamicContentUpdaterOutputSchema,
   },
   async input => {
-    const {text} = await prompt(input);
-    return text!;
+    const {output} = await prompt(input);
+    return output!;
   }
 );
