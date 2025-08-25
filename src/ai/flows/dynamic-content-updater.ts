@@ -4,7 +4,7 @@
  * @fileOverview This file defines a Genkit flow for automatically updating website content
  * based on the latest information from the website owner's professional profiles.
  *
- * - dynamicContentUpdater - A function that triggers the content update process.
+ * - dynamicContentUpdater - a function that triggers the content update process.
  * - DynamicContentUpdaterInput - The input type for the dynamicContentUpdater function (currently empty).
  * - DynamicContentUpdaterOutput - The return type for the dynamicContentUpdater function (a string).
  */
@@ -27,7 +27,7 @@ export async function dynamicContentUpdater(input: DynamicContentUpdaterInput): 
 const prompt = ai.definePrompt({
   name: 'dynamicContentUpdaterPrompt',
   input: {schema: DynamicContentUpdaterInputSchema},
-  output: {schema: DynamicContentUpdaterOutputSchema},
+  output: {schema: DynamicContentUpdaterOutputSchema.nullable()},
   prompt: `You are an AI-powered content updater for a personal website. Your goal is to keep the website's content fresh and accurate by automatically updating it with the latest information from the website owner's professional profiles.
 
   Specifically, you will search for the latest certifications, project details, and skills from the following sources:
