@@ -27,7 +27,7 @@ export function Hero() {
       
       <div className="container px-4 md:px-6 z-20 relative">
         <div className="max-w-4xl text-left text-white">
-          <span className="text-primary font-semibold tracking-wider uppercase">Digital Marketing Specialist | Data Analyst</span>
+          <span className="text-primary font-semibold tracking-wider uppercase">Digital Marketing Specialist | Data Analyst | vibe coder</span>
           <h1 className="text-5xl font-extrabold tracking-tighter sm:text-7xl md:text-8xl lg:text-9xl mt-2">
             Mahadev M
           </h1>
