@@ -1,64 +1,45 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { ArrowRight, Circle, Code, Framer, Layers, LayoutGrid } from "lucide-react";
-import { Suspense } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
 import Image from "next/image";
-import { Badge } from "@/components/ui/badge";
+import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import Link from "next/link";
+
+const contactDetails = [
+    { icon: Mail, text: "devminfo98@gmail.com", href: "mailto:devminfo98@gmail.com" },
+    { icon: Phone, text: "+91 7406894741", href: "tel:+917406894741" },
+    { icon: Linkedin, text: "linkedin.com/in/mahadevm", href: "https://www.linkedin.com/in/mahadevm/" },
+    { icon: MapPin, text: "Bengaluru, India", href: "#" },
+]
 
 export function Hero() {
   return (
     <section
       id="home"
-      className="relative w-full min-h-[calc(100vh-4rem)] flex items-center justify-center py-20 md:py-32"
+      className="relative w-full h-screen min-h-[700px] flex items-center"
     >
-       <div className="absolute inset-0 h-full w-full bg-black bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)]"></div>
+       <div className="absolute inset-0 bg-black/60 z-10"></div>
+       <Image 
+        src="/mahadev-m.jpg" 
+        alt="Background image of Mahadev M"
+        fill
+        className="object-cover"
+        data-ai-hint="professional headshot"
+        priority
+       />
       
-      <div className="container px-4 md:px-6 z-10 grid md:grid-cols-2 gap-12 items-center">
-        <div className="max-w-xl text-left">
-          <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 mb-4">
-            <Circle className="h-2 w-2 mr-2 fill-primary" />
-            Available for Projects
-          </Badge>
-          <h1 className="text-4xl font-extrabold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-            Meet the Expert Web Developer
+      <div className="container px-4 md:px-6 z-20 relative">
+        <div className="max-w-4xl text-left text-white">
+          <span className="text-primary font-semibold tracking-wider uppercase">Digital Specialist & Analyst</span>
+          <h1 className="text-5xl font-extrabold tracking-tighter sm:text-7xl md:text-8xl lg:text-9xl mt-2">
+            Mahadev M
           </h1>
-          <p className="mt-6 text-lg md:text-xl text-muted-foreground">
-            I focus on delivering seamless navigation, responsive layouts, and pixel-perfect designs.
-          </p>
-          <div className="mt-8 flex justify-start gap-4">
-            <Button asChild size="lg">
-              <Link href="#portfolio">Explore Services <ArrowRight className="ml-2" /></Link>
-            </Button>
+          
+          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-4">
+            {contactDetails.map((detail, index) => (
+                <Link key={index} href={detail.href} target="_blank" className="flex items-center gap-3 text-sm group">
+                    <detail.icon className="h-5 w-5 text-primary" />
+                    <span className="group-hover:text-primary transition-colors">{detail.text}</span>
+                </Link>
+            ))}
           </div>
-        </div>
-
-        <div className="relative flex justify-center items-center">
-            <div className="absolute -top-8 -left-8 size-12 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm"><Code size={24} /></div>
-            <div className="absolute -bottom-8 -left-16 size-12 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm"><Layers size={24} /></div>
-            <div className="absolute -top-12 right-0 size-12 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm"><LayoutGrid size={24} /></div>
-            <div className="absolute -bottom-12 right-8 size-12 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm"><Framer size={24} /></div>
-            
-            <Image 
-                src="/mahadev-m.jpg" 
-                alt="Mahadev M" 
-                width={450} 
-                height={450} 
-                className="rounded-full object-cover z-10 shadow-2xl shadow-primary/20"
-                data-ai-hint="professional headshot"
-            />
-            <div className="absolute bottom-0 right-0 z-20">
-                <div className="relative w-32 h-32">
-                    <svg className="w-full h-full animate-spin [animation-duration:10s]" viewBox="0 0 100 100">
-                        <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" stroke="none"></path>
-                        <text>
-                            <textPath href="#circlePath" startOffset="50%" textAnchor="middle" fill="hsl(var(--foreground))" className="text-sm font-semibold tracking-wider uppercase">
-                                OFFICIAL FRAMER PARTNER CREATOR
-                            </textPath>
-                        </text>
-                    </svg>
-                </div>
-            </div>
         </div>
       </div>
     </section>

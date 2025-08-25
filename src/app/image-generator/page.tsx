@@ -7,6 +7,7 @@ import { generateProfessionalImage } from '@/ai/flows/professional-image-generat
 import Image from 'next/image';
 import { Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import Link from 'next/link';
 
 export default function ImageGeneratorPage() {
   const [originalImage, setOriginalImage] = useState<string | null>(null);
@@ -48,16 +49,16 @@ export default function ImageGeneratorPage() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-background">
-       <header className="sticky top-0 z-50 w-full flex justify-center py-4">
-        <div className="flex h-16 w-full max-w-sm items-center justify-center rounded-full bg-black/30 p-2 backdrop-blur-xl border border-white/10 mx-4">
-            <h1 className="text-xl font-bold">AI Headshot Generator</h1>
-        </div>
-        </header>
-      <main className="flex-grow container mx-auto px-4 md:px-6 py-8">
-        <Card className="max-w-2xl mx-auto bg-secondary/30 border-primary/20">
+    <div className="flex flex-col min-h-screen bg-background p-4 md:p-8">
+      <header className="w-full flex justify-end">
+        <Button asChild>
+            <Link href="/">Back to Home</Link>
+        </Button>
+      </header>
+      <main className="flex-grow container mx-auto px-4 md:px-6 py-8 flex items-center justify-center">
+        <Card className="max-w-4xl mx-auto w-full bg-secondary/30 border-primary/20">
           <CardHeader>
-            <CardTitle>Create a Professional Headshot</CardTitle>
+            <CardTitle>AI Professional Headshot</CardTitle>
             <CardDescription>
               Upload a picture of yourself, and our AI will generate a professional headshot for you.
             </CardDescription>
@@ -70,16 +71,16 @@ export default function ImageGeneratorPage() {
                 type="file" 
                 accept="image/*" 
                 onChange={handleImageUpload}
-                className="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20"
+                className="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary/20 file:text-primary hover:file:bg-primary/30"
               />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
               <div className="space-y-2">
                 <h3 className="font-semibold">Original</h3>
-                <div className="aspect-square w-full rounded-md border border-dashed flex items-center justify-center bg-secondary/30">
+                <div className="aspect-square w-full rounded-md border-2 border-dashed border-border flex items-center justify-center bg-secondary/30">
                   {originalImage ? (
-                    <Image src={originalImage} alt="Original" width={400} height={400} className="rounded-md object-cover" />
+                    <Image src={originalImage} alt="Original" width={400} height={400} className="rounded-md object-cover max-h-full" />
                   ) : (
                     <p className="text-muted-foreground">No image uploaded</p>
                   )}
@@ -87,37 +88,40 @@ export default function ImageGeneratorPage() {
               </div>
               <div className="space-y-2">
                 <h3 className="font-semibold">Generated</h3>
-                 <div className="aspect-square w-full rounded-md border border-dashed flex items-center justify-center bg-secondary/30">
+                 <div className="aspect-square w-full rounded-md border-2 border-dashed border-border flex items-center justify-center bg-secondary/30">
                   {isLoading ? (
                     <div className="flex flex-col items-center gap-2 text-muted-foreground">
                         <Loader2 className="h-8 w-8 animate-spin text-primary" />
                         <p>Generating...</p>
                     </div>
                   ) : generatedImage ? (
-                    <Image src={generatedImage} alt="Generated Headshot" width={400} height={400} className="rounded-md object-cover" />
+                    <Image src={generatedImage} alt="Generated Headshot" width={400} height={400} className="rounded-md object-cover max-h-full" />
                   ) : (
                     <p className="text-muted-foreground">AI image will appear here</p>
                   )}
                 </div>
               </div>
             </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+                <Button onClick={handleGenerateClick} disabled={!originalImage || isLoading} className="w-full" size="lg">
+                {isLoading ? (
+                    <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Generating...
+                    </>
+                ) : (
+                    'Generate Headshot'
+                )}
+                </Button>
 
-             <Button onClick={handleGenerateClick} disabled={!originalImage || isLoading} className="w-full" size="lg">
-              {isLoading ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Generating...
-                </>
-              ) : (
-                'Generate Headshot'
-              )}
-            </Button>
+                {generatedImage && (
+                    <Button asChild variant="outline" className="w-full" size="lg">
+                        <a href={generatedImage} download="professional-headshot.png">Download Image</a>
+                    </Button>
+                )}
+            </div>
 
-            {generatedImage && (
-                 <Button asChild variant="outline" className="w-full">
-                    <a href={generatedImage} download="professional-headshot.png">Download Image</a>
-                 </Button>
-            )}
           </CardContent>
         </Card>
       </main>

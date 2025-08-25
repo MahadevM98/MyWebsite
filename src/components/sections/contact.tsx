@@ -14,9 +14,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Phone, MapPin } from "lucide-react";
-import Link from "next/link";
 import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
@@ -46,133 +43,76 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="w-full py-20 md:py-32 bg-secondary/30">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
+    <section id="contact" className="w-full py-20 md:py-32">
+      <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+        <div className="text-left mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">
             Get In Touch
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="mt-4 text-lg text-muted-foreground">
             Have a project in mind or just want to say hello? I'd love to hear
             from you.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-5 gap-12">
-          <div className="md:col-span-2 space-y-8">
-            <h3 className="text-2xl font-bold tracking-tight">
-              Contact Information
-            </h3>
-            <div className="space-y-4">
-              <Link
-                href="mailto:devminfo98@gmail.com"
-                className="flex items-center gap-4 group"
-              >
-                <div className="p-3 rounded-full bg-secondary/80 group-hover:bg-primary/20 transition-colors">
-                  <Mail className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <p className="font-semibold">Email</p>
-                  <p className="text-muted-foreground group-hover:text-primary transition-colors">
-                    devminfo98@gmail.com
-                  </p>
-                </div>
-              </Link>
-              <Link
-                href="tel:+917406894741"
-                className="flex items-center gap-4 group"
-              >
-                <div className="p-3 rounded-full bg-secondary/80 group-hover:bg-primary/20 transition-colors">
-                  <Phone className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <p className="font-semibold">Phone</p>
-                  <p className="text-muted-foreground group-hover:text-primary transition-colors">
-                    +91 7406894741
-                  </p>
-                </div>
-              </Link>
-              <Link
-                href="https://www.mwebs.io/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 group"
-              >
-                <div className="p-3 rounded-full bg-secondary/80 group-hover:bg-primary/20 transition-colors">
-                  <MapPin className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <p className="font-semibold">Website</p>
-                  <p className="text-muted-foreground group-hover:text-primary transition-colors">
-                    mwebs.io
-                  </p>
-                </div>
-              </Link>
+        <Form {...form}>
+            <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-6"
+            >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                    <FormItem>
+                    <FormLabel>Name</FormLabel>
+                    <FormControl>
+                        <Input placeholder="Your Name" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                    </FormItem>
+                )}
+                />
+                <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                    <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                        <Input
+                        placeholder="your.email@example.com"
+                        {...field}
+                        />
+                    </FormControl>
+                    <FormMessage />
+                    </FormItem>
+                )}
+                />
             </div>
-          </div>
-          <div className="md:col-span-3">
-            <Card className="bg-secondary/30 border-secondary">
-              <CardContent className="p-8">
-                <Form {...form}>
-                  <form
-                    onSubmit={form.handleSubmit(onSubmit)}
-                    className="space-y-6"
-                  >
-                    <FormField
-                      control={form.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Name</FormLabel>
-                          <FormControl>
-                            <Input placeholder="Your Name" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
+            <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                <FormItem>
+                    <FormLabel>Message</FormLabel>
+                    <FormControl>
+                    <Textarea
+                        placeholder="Your message..."
+                        rows={6}
+                        {...field}
                     />
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Email</FormLabel>
-                          <FormControl>
-                            <Input
-                              placeholder="your.email@example.com"
-                              {...field}
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Message</FormLabel>
-                          <FormControl>
-                            <Textarea
-                              placeholder="Your message..."
-                              rows={6}
-                              {...field}
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <Button type="submit" className="w-full" size="lg">
-                      Send Message
-                    </Button>
-                  </form>
-                </Form>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
+                    </FormControl>
+                    <FormMessage />
+                </FormItem>
+                )}
+            />
+            <Button type="submit" size="lg">
+                Send Message
+            </Button>
+            </form>
+        </Form>
       </div>
     </section>
   );

@@ -1,19 +1,20 @@
 import Link from "next/link";
 import { Framer } from "lucide-react";
+import { Button } from "./ui/button";
 
 export function Footer() {
-  const year = new Date().getFullYear();
   return (
-    <footer className="w-full bg-transparent">
-      <div className="container mx-auto flex flex-col items-center justify-between gap-6 px-4 py-8 sm:flex-row">
-        <div className="text-sm text-muted-foreground">
-          &copy; {year} Mahadev M. All rights reserved.
-        </div>
-        <div className="flex items-center gap-2">
-            <Framer className="h-4 w-4" />
-            <span className="text-sm text-muted-foreground">Made in Framer</span>
-        </div>
-      </div>
+    <footer className="fixed bottom-4 right-4 z-50 space-y-2">
+       <Button asChild size="sm" variant="outline" className="bg-black/50 backdrop-blur-sm">
+        <Link href="https://framer.com/templates/boldex-portfolio-website-template/" target="_blank">
+          Get this Template
+        </Link>
+      </Button>
+      <Button asChild size="sm" variant="outline" className="bg-black/50 backdrop-blur-sm">
+        <Link href="https://firebase.google.com/studio" target="_blank">
+          <Framer className="mr-2" /> Made in Firebase Studio
+        </Link>
+      </Button>
     </footer>
   );
 }
