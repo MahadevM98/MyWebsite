@@ -15,7 +15,7 @@ export function Header() {
             </span>
             Open to work
         </Badge>
-        <Button asChild>
+        <Button asChild variant="glass">
             <a href="/mahadev_m_cv.pdf" download>Download CV</a>
         </Button>
       </div>

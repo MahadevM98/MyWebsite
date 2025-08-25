@@ -108,7 +108,7 @@ export function Contact() {
                 </FormItem>
                 )}
             />
-            <Button type="submit" size="lg">
+            <Button type="submit" size="lg" variant="glass">
                 Send Message
             </Button>
             </form>
