@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, ArrowRight } from "lucide-react";
+import { Menu, ArrowRight, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Image from "next/image";
@@ -82,6 +82,15 @@ export function Header() {
                 </Link>
             </Button>
           ))}
+            <Button asChild variant="ghost" className="rounded-full text-white/80 hover:text-white">
+                <Link
+                href="/image-generator"
+                className="transition-colors hover:text-primary"
+                >
+                <Bot className="mr-2"/>
+                AI Headshot
+                </Link>
+            </Button>
         </nav>
 
         <div className="hidden md:block">
@@ -110,6 +119,13 @@ export function Header() {
                       {link.label}
                     </Link>
                   ))}
+                   <Link
+                      href="/image-generator"
+                      className="text-lg flex items-center"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <Bot className="mr-2 h-5 w-5"/> AI Headshot
+                    </Link>
                   <div className="mt-4">
                     <StartProjectButton />
                   </div>
