@@ -22,7 +22,7 @@ export function MainNav() {
     <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
         <div className="bg-secondary/50 border border-primary/20 backdrop-blur-lg rounded-full flex items-center gap-2 p-2">
             {navLinks.map((link) => {
-                const isActive = pathname === link.href || (link.href.startsWith("/#") && pathname === "/");
+                const isActive = pathname === link.href || (link.href.startsWith("#") && pathname === "/");
                 return (
                 <Button asChild variant="ghost" size="icon" key={link.href} className={cn("rounded-full h-12 w-12 flex-col text-xs gap-1", isActive && "bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground")}>
                     <Link href={link.href} title={link.label}>
