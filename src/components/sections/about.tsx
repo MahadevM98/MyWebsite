@@ -77,7 +77,7 @@ export function About() {
                 </div>
             </div>
           
-            <div>
+            <Card className="bg-secondary/30 border-primary/20 backdrop-blur-sm p-6">
                 <h3 className="text-2xl font-bold tracking-tight mb-6 text-primary">
                     Skills & Expertise
                 </h3>
@@ -92,9 +92,8 @@ export function About() {
                     </Badge>
                 ))}
                 </div>
-            </div>
+            </Card>
         </div>
       </div>
     </section>
   );
-}
