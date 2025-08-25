@@ -15,79 +15,115 @@ const navLinks = [
   { href: "#contact", label: "Contact" },
 ];
 
+function Logo() {
+  return (
+    <Link href="#home" className="flex items-center gap-3 group">
+      <div className="relative w-12 h-12">
+        <svg
+          className="absolute inset-0 w-full h-full"
+          viewBox="0 0 100 100"
+        >
+          <defs>
+            <clipPath id="hexagon">
+              <polygon points="50 0, 95 25, 95 75, 50 100, 5 75, 5 25" />
+            </clipPath>
+          </defs>
+          <g clipPath="url(#hexagon)">
+            <Image
+              src="https://picsum.photos/100/100"
+              alt="Mahadev M"
+              width={100}
+              height={100}
+              className="object-cover transition-transform duration-300 group-hover:scale-110"
+              data-ai-hint="professional headshot"
+            />
+          </g>
+          <polygon
+            points="50 0, 95 25, 95 75, 50 100, 5 75, 5 25"
+            stroke="hsl(var(--primary))"
+            strokeWidth="4"
+            fill="none"
+          />
+        </svg>
+      </div>
+      <div>
+        <span className="text-lg font-bold">Mahadev M</span>
+        <p className="text-sm font-normal text-muted-foreground">
+          Web Developer
+        </p>
+      </div>
+    </Link>
+  );
+}
+
+function StartProjectButton() {
+  return (
+     <Button asChild size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground group pl-3 pr-6">
+      <Link href="#contact">
+          <span className="bg-white text-black rounded-full p-2 mr-3 group-hover:bg-gray-200 transition-colors">
+            <ArrowRight className="h-4 w-4" />
+          </span>
+          Start a Project
+      </Link>
+    </Button>
+  )
+}
+
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm">
-      <div className="container flex h-16 items-center justify-between">
-        <Link
-          href="#home"
-          className="flex items-center gap-3 font-bold"
-        >
-          <Image src="https://picsum.photos/40/40" alt="Mahadev M" width={40} height={40} className="rounded-full" data-ai-hint="professional headshot" />
-          <div>
-            <span className="text-lg font-bold">Mahadev M</span>
-            <p className="text-sm font-normal text-muted-foreground">Web Developer</p>
+    <header className="sticky top-0 z-50 w-full">
+      <div className="container my-4">
+        <div className="flex h-20 items-center justify-between rounded-full bg-secondary/50 p-4 backdrop-blur-sm border border-border/40">
+          <Logo />
+
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="transition-colors hover:text-primary"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="hidden md:block">
+            <StartProjectButton />
           </div>
-        </Link>
 
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="transition-colors hover:text-primary"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-2 md:hidden">
-          <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Open Menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[240px] bg-background">
-              <div className="flex flex-col gap-6 pt-10">
-                <Link
-                  href="#home"
-                  className="flex items-center gap-2 font-bold"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <Image src="https://picsum.photos/40/40" alt="Mahadev M" width={40} height={40} className="rounded-full" data-ai-hint="professional headshot" />
-                   <div>
-                    <span className="text-lg font-bold">Mahadev M</span>
-                    <p className="text-sm font-normal text-muted-foreground">Web Developer</p>
+          <div className="flex items-center gap-2 md:hidden">
+            <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Open Menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[240px] bg-background">
+                <div className="flex flex-col gap-6 pt-10">
+                  <Logo />
+                  <div className="flex flex-col gap-4">
+                    {navLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="text-lg"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                    <div className="mt-4">
+                      <StartProjectButton />
+                    </div>
                   </div>
-                </Link>
-                <div className="flex flex-col gap-4">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="text-lg"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                   <Button asChild size="lg" className="mt-4">
-                      <Link href="#contact">Start a Project <ArrowRight className="ml-2"/></Link>
-                    </Button>
                 </div>
-              </div>
-            </SheetContent>
-          </Sheet>
-        </div>
-        <div className="hidden md:block">
-           <Button asChild size="lg">
-              <Link href="#contact">Start a Project <ArrowRight className="ml-2"/></Link>
-            </Button>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </header>
