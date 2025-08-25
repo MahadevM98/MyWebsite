@@ -23,7 +23,7 @@ export function MainNav() {
             {navLinks.map((link) => {
                 const isActive = pathname === link.href || (link.href.startsWith("#") && pathname === "/");
                 return (
-                <Button asChild variant="ghost" size="icon" key={link.href} className={cn("rounded-full h-12 w-12 flex-col text-xs gap-1", isActive && "bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground")}>
+                <Button asChild variant="ghost" size="icon" key={link.href} className={cn("rounded-full h-12 w-12 flex-col text-xs gap-1 transition-transform duration-200 ease-in-out hover:scale-110", isActive && "bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground")}>
                     <Link href={link.href} title={link.label}>
                         <link.icon className="h-5 w-5" />
                         <span className="sr-only">{link.label}</span>
