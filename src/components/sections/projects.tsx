@@ -23,7 +23,7 @@ const certifications = [
     title: "Business Analysis & Process Management",
     issuer: "Coursera",
     link: "#",
-    image: "https://picsum.photos/600/400?random=8",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8YnVzaW5lc3MlMjBhbmFseXNpc3xlbnwwfHx8fDE3NTYxNjEyMjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
     aiHint: "certificate business analysis",
   },
   {
