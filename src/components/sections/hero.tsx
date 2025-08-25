@@ -5,7 +5,7 @@ import Link from "next/link";
 const contactDetails = [
     { icon: Mail, text: "devminfo98@gmail.com", href: "mailto:devminfo98@gmail.com" },
     { icon: Phone, text: "+91 7406894741", href: "tel:+917406894741" },
-    { icon: Linkedin, text: "linkedin.com/in/mahadevm", href: "https://www.linkedin.com/in/mahadevm/" },
+    { icon: Linkedin, text: "linkedin.com/in/mahadev-m", href: "https://www.linkedin.com/in/mahadev-m-a08a57365" },
     { icon: LinkIcon, text: "mwebs.io", href: "https://www.mwebs.io/" },
 ]
 

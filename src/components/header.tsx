@@ -7,7 +7,7 @@ import { Linkedin, Mail, Link as LinkIcon, Download } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const socialLinks = [
-    { icon: Linkedin, href: "https://www.linkedin.com/in/mahadevm/", title: "LinkedIn"},
+    { icon: Linkedin, href: "https://www.linkedin.com/in/mahadev-m-a08a57365", title: "LinkedIn"},
     { icon: Mail, href: "mailto:devminfo98@gmail.com", title: "Email" },
 ]
 
