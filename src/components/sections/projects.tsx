@@ -16,7 +16,7 @@ const certifications = [
     title: "Google Data Analytics Professional Certificate",
     issuer: "Google",
     link: "#",
-    image: "https://picsum.photos/600/400?random=7",
+    image: "https://images.unsplash.com/photo-1662947190722-5d272f82a526?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8R29vZ2xlJTIwY2VydGlmaWNhdGlvbnxlbnwwfHx8fDE3NTYxNjExODZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
     aiHint: "certificate data analytics",
   },
   {
