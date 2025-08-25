@@ -18,7 +18,7 @@ const navLinks = [
 function Logo() {
   return (
     <Link href="#home" className="flex items-center gap-3 group">
-      <div className="relative w-12 h-12">
+      <div className="relative w-10 h-10">
         <svg
           className="absolute inset-0 w-full h-full"
           viewBox="0 0 100 100"
@@ -46,21 +46,15 @@ function Logo() {
           />
         </svg>
       </div>
-      <div>
-        <span className="text-lg font-bold">Mahadev M</span>
-        <p className="text-sm font-normal text-muted-foreground">
-          Web Developer
-        </p>
-      </div>
     </Link>
   );
 }
 
 function StartProjectButton() {
   return (
-     <Button asChild size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground group pl-3 pr-6">
+     <Button asChild variant="glass" size="lg" className="rounded-full pl-3 pr-6 text-sm font-semibold">
       <Link href="#contact">
-          <span className="bg-white text-black rounded-full p-2 mr-3 group-hover:bg-gray-200 transition-colors">
+          <span className="bg-white/20 text-white rounded-full p-2 mr-3 group-hover:bg-white/30 transition-colors">
             <ArrowRight className="h-4 w-4" />
           </span>
           Start a Project
@@ -74,18 +68,19 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full flex justify-center py-4">
-      <div className="flex h-20 w-full max-w-6xl items-center justify-between rounded-full bg-secondary/50 p-4 backdrop-blur-sm border border-border/40 mx-4">
+      <div className="flex h-16 w-full max-w-6xl items-center justify-between rounded-full bg-black/30 p-2 backdrop-blur-xl border border-white/10 mx-4">
         <Logo />
 
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-1 text-sm font-medium">
           {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="transition-colors hover:text-primary"
-            >
-              {link.label}
-            </Link>
+            <Button asChild variant="ghost" className="rounded-full text-white/80 hover:text-white" key={link.href}>
+                <Link
+                href={link.href}
+                className="transition-colors hover:text-primary"
+                >
+                {link.label}
+                </Link>
+            </Button>
           ))}
         </nav>
 
