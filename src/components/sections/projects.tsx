@@ -30,7 +30,7 @@ const certifications = [
     title: "Email Marketing Professional",
     issuer: "Intuit Mailchimp",
     link: "#",
-    image: "https://picsum.photos/600/400?random=9",
+    image: "https://images.unsplash.com/photo-1603791445824-0050bd436b6d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8ZW1haWx8ZW58MHx8fHwxNzU2MTYxMjk3fDA&ixlib=rb-4.1.0&q=80&w=1080",
     aiHint: "certificate email marketing",
   },
 ];
