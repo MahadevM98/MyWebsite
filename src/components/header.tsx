@@ -73,57 +73,55 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full">
-      <div className="container my-4">
-        <div className="flex h-20 items-center justify-between rounded-full bg-secondary/50 p-4 backdrop-blur-sm border border-border/40">
-          <Logo />
+    <header className="sticky top-0 z-50 w-full flex justify-center py-4">
+      <div className="flex h-20 w-full max-w-6xl items-center justify-between rounded-full bg-secondary/50 p-4 backdrop-blur-sm border border-border/40 mx-4">
+        <Logo />
 
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="transition-colors hover:text-primary"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="transition-colors hover:text-primary"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
 
-          <div className="hidden md:block">
-            <StartProjectButton />
-          </div>
+        <div className="hidden md:block">
+          <StartProjectButton />
+        </div>
 
-          <div className="flex items-center gap-2 md:hidden">
-            <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-6 w-6" />
-                  <span className="sr-only">Open Menu</span>
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-[240px] bg-background">
-                <div className="flex flex-col gap-6 pt-10">
-                  <Logo />
-                  <div className="flex flex-col gap-4">
-                    {navLinks.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className="text-lg"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {link.label}
-                      </Link>
-                    ))}
-                    <div className="mt-4">
-                      <StartProjectButton />
-                    </div>
+        <div className="flex items-center gap-2 md:hidden">
+          <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Open Menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[240px] bg-background">
+              <div className="flex flex-col gap-6 pt-10">
+                <Logo />
+                <div className="flex flex-col gap-4">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="text-lg"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                  <div className="mt-4">
+                    <StartProjectButton />
                   </div>
                 </div>
-              </SheetContent>
-            </Sheet>
-          </div>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>
