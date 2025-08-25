@@ -4,18 +4,26 @@ import { Badge } from "@/components/ui/badge";
 import { Briefcase } from "lucide-react";
 
 const skills = [
-  "Prompt Engineering",
-  "Campaign Optimization",
-  "SEO",
-  "A/B Testing",
-  "Reinforcement Learning",
-  "Data-Driven Decision-Making",
   "SQL",
   "Tableau",
+  "Excel",
   "Google Analytics",
   "Google Data Studio",
+  "A/B Testing",
   "R Programming",
-  "AI Training Data Annotation",
+  "Kaggle",
+  "Meta Ads",
+  "Mailchimp",
+  "SEO",
+  "SEM",
+  "Google Ads",
+  "LLM evaluation",
+  "Data annotation",
+  "Prompt testing",
+  "Reinforcement learning",
+  "Wix",
+  "Shopify",
+  "Payment Gateways"
 ];
 
 const experiences = [
@@ -23,19 +31,19 @@ const experiences = [
     role: "AI Training Contributor",
     company: "Outlier.ai",
     description:
-      "Contributed to AI training through data annotation and reinforcement learning from human feedback.",
+      "Judged AI model responses for clarity and accuracy, labeled datasets to improve learning, and gained hands-on experience with prompt engineering.",
   },
   {
     role: "Digital Marketing Specialist",
     company: "Polisika Marketing Solutions",
     description:
-      "Developed and executed comprehensive digital marketing campaigns, focusing on SEO, A/B testing, and campaign optimization to drive growth.",
+      "Led Google Ads, SEO, and performance marketing to increase qualified leads. Built live dashboards with SQL for transparent reporting and data-driven recommendations.",
   },
   {
-    role: "Co-Founder",
+    role: "Digital Marketing Specialist",
     company: "Kikbit Foods India Pvt. Ltd.",
     description:
-      "Co-founded and managed business operations, applying data-driven strategies for market entry and growth.",
+      "Ran SEO, email, and paid ad strategies to grow traffic. A/B tested landing pages and used Google Analytics to improve the marketing funnel.",
   },
 ];
 
@@ -48,8 +56,7 @@ export function About() {
             About Me
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            A blend of marketing acumen, analytical prowess, and coding
-            curiosity. I thrive on leveraging data to drive digital growth and build intelligent applications.
+            Curious, passionate, and results-focused digital marketer who believes numbers can tell a story. I love making sense of data, turning insights into actions, and helping businesses grow online. Whether it’s optimizing a campaign or evaluating cutting-edge AI models, I enjoy rolling up my sleeves, solving problems, and contributing to a talented team. Let’s create something impactful together!
           </p>
         </div>
 

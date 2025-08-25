@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Link as LinkIcon } from "lucide-react";
 import Link from "next/link";
 
 const contactDetails = [
     { icon: Mail, text: "devminfo98@gmail.com", href: "mailto:devminfo98@gmail.com" },
     { icon: Phone, text: "+91 7406894741", href: "tel:+917406894741" },
     { icon: Linkedin, text: "linkedin.com/in/mahadevm", href: "https://www.linkedin.com/in/mahadevm/" },
-    { icon: MapPin, text: "Bengaluru, India", href: "#" },
+    { icon: LinkIcon, text: "mwebs.io", href: "https://www.mwebs.io/" },
 ]
 
 export function Hero() {
@@ -27,7 +27,7 @@ export function Hero() {
       
       <div className="container px-4 md:px-6 z-20 relative">
         <div className="max-w-4xl text-left text-white">
-          <span className="text-primary font-semibold tracking-wider uppercase">Digital Specialist & Analyst</span>
+          <span className="text-primary font-semibold tracking-wider uppercase">Digital Marketing Specialist | Data Analyst</span>
           <h1 className="text-5xl font-extrabold tracking-tighter sm:text-7xl md:text-8xl lg:text-9xl mt-2">
             Mahadev M
           </h1>

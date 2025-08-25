@@ -7,9 +7,33 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Github } from "lucide-react";
+import { Award, Github } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+
+const certifications = [
+  {
+    title: "Google Data Analytics Professional Certificate",
+    issuer: "Google",
+    link: "#",
+    image: "https://picsum.photos/600/400?random=7",
+    aiHint: "certificate data analytics",
+  },
+  {
+    title: "Business Analysis & Process Management",
+    issuer: "Coursera",
+    link: "#",
+    image: "https://picsum.photos/600/400?random=8",
+    aiHint: "certificate business analysis",
+  },
+  {
+    title: "Email Marketing Professional",
+    issuer: "Intuit Mailchimp",
+    link: "#",
+    image: "https://picsum.photos/600/400?random=9",
+    aiHint: "certificate email marketing",
+  },
+];
 
 const projects = [
   {
@@ -44,13 +68,51 @@ export function Projects() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">
-            GitHub Projects
+            Certifications &amp; Projects
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-            Exploring data and code. Here are some of my favorite repositories.
+            A collection of my professional certifications and favorite GitHub repositories.
           </p>
         </div>
 
+        <h3 className="text-2xl md:text-3xl font-bold tracking-tighter mb-8 text-primary">Certifications</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {certifications.map((cert, index) => (
+            <Card
+              key={index}
+              className="flex flex-col overflow-hidden bg-secondary/30 border-secondary group"
+            >
+              <div className="overflow-hidden">
+                <Image
+                  src={cert.image}
+                  alt={cert.title}
+                  width={600}
+                  height={400}
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  data-ai-hint={cert.aiHint}
+                />
+              </div>
+              <CardHeader>
+                <CardTitle className="tracking-tight">{cert.title}</CardTitle>
+                <CardDescription>{cert.issuer}</CardDescription>
+              </CardHeader>
+              <CardFooter>
+                <Button asChild className="w-full" variant="outline">
+                  <Link
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Award className="mr-2 h-4 w-4" />
+                    View Certificate
+                  </Link>
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+
+        <h3 className="text-2xl md:text-3xl font-bold tracking-tighter mb-8 text-primary">GitHub Projects</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <Card
