@@ -11,7 +11,7 @@
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 
-export const ProfessionalImageInputSchema = z.object({
+const ProfessionalImageInputSchema = z.object({
   photoDataUri: z
     .string()
     .describe(
@@ -20,7 +20,7 @@ export const ProfessionalImageInputSchema = z.object({
 });
 export type ProfessionalImageInput = z.infer<typeof ProfessionalImageInputSchema>;
 
-export const ProfessionalImageOutputSchema = z.object({
+const ProfessionalImageOutputSchema = z.object({
     imageDataUri: z.string().describe("The generated image as a data URI.")
 });
 export type ProfessionalImageOutput = z.infer<typeof ProfessionalImageOutputSchema>;
