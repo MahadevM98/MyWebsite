@@ -46,10 +46,10 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="w-full py-20 md:py-32 bg-secondary/50">
+    <section id="contact" className="w-full py-20 md:py-32 bg-secondary/30">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl md:text-4xl font-bold">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">
             Get In Touch
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -60,7 +60,7 @@ export function Contact() {
 
         <div className="grid md:grid-cols-5 gap-12">
           <div className="md:col-span-2 space-y-8">
-            <h3 className="font-headline text-2xl font-bold">
+            <h3 className="text-2xl font-bold tracking-tight">
               Contact Information
             </h3>
             <div className="space-y-4">
@@ -68,7 +68,7 @@ export function Contact() {
                 href="mailto:devminfo98@gmail.com"
                 className="flex items-center gap-4 group"
               >
-                <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                <div className="p-3 rounded-full bg-secondary/80 group-hover:bg-primary/20 transition-colors">
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
                 <div>
@@ -82,7 +82,7 @@ export function Contact() {
                 href="tel:+917406894741"
                 className="flex items-center gap-4 group"
               >
-                <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                <div className="p-3 rounded-full bg-secondary/80 group-hover:bg-primary/20 transition-colors">
                   <Phone className="h-6 w-6 text-primary" />
                 </div>
                 <div>
@@ -98,7 +98,7 @@ export function Contact() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 group"
               >
-                <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                <div className="p-3 rounded-full bg-secondary/80 group-hover:bg-primary/20 transition-colors">
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <div>
@@ -111,7 +111,7 @@ export function Contact() {
             </div>
           </div>
           <div className="md:col-span-3">
-            <Card>
+            <Card className="bg-secondary/30 border-secondary">
               <CardContent className="p-8">
                 <Form {...form}>
                   <form

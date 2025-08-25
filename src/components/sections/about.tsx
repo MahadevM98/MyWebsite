@@ -41,10 +41,10 @@ const experiences = [
 
 export function About() {
   return (
-    <section id="about" className="w-full py-20 md:py-32 bg-secondary/50">
+    <section id="about" className="w-full py-20 md:py-32 bg-secondary/30">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl md:text-4xl font-bold">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">
             About Me
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -60,12 +60,12 @@ export function About() {
               alt="Mahadev M"
               width={400}
               height={400}
-              className="rounded-full object-cover shadow-lg border-4 border-background"
+              className="rounded-full object-cover shadow-lg border-4 border-primary/50"
               data-ai-hint="professional headshot"
             />
           </div>
           <div className="md:col-span-3">
-            <h3 className="font-headline text-2xl font-bold mb-4">
+            <h3 className="text-2xl font-bold tracking-tight mb-4">
               Career Highlights
             </h3>
             <div className="space-y-6">
@@ -87,9 +87,9 @@ export function About() {
           </div>
         </div>
 
-        <Card className="mt-16">
+        <Card className="mt-16 bg-transparent border-secondary">
           <CardHeader>
-            <CardTitle className="font-headline text-2xl font-bold">
+            <CardTitle className="text-2xl font-bold tracking-tight">
               Skills & Expertise
             </CardTitle>
           </CardHeader>

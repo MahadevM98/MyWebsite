@@ -20,7 +20,7 @@ export function Cv() {
     <section id="cv" className="w-full py-20 md:py-32">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl md:text-4xl font-bold">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">
             Resume & Certifications
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -28,10 +28,10 @@ export function Cv() {
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
-          <Card className="flex flex-col items-center justify-center text-center p-8 shadow-lg">
+          <Card className="flex flex-col items-center justify-center text-center p-8 bg-secondary/30 border-secondary">
             <BookUser className="h-16 w-16 text-primary mb-4" />
             <CardHeader>
-              <CardTitle className="font-headline text-2xl">
+              <CardTitle className="text-2xl tracking-tight">
                 Download My CV
               </CardTitle>
               <CardDescription className="mt-2">
@@ -47,9 +47,9 @@ export function Cv() {
               </Button>
             </CardContent>
           </Card>
-          <Card className="p-8 shadow-lg">
+          <Card className="p-8 bg-secondary/30 border-secondary">
             <CardHeader className="p-0 mb-6">
-              <CardTitle className="font-headline text-2xl">
+              <CardTitle className="text-2xl tracking-tight">
                 Professional Certifications
               </CardTitle>
               <CardDescription className="mt-2">

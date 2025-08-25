@@ -4,48 +4,26 @@
 
 @layer base {
   :root {
-    --background: 180 40% 90.2%; /* #E0EEEE */
-    --foreground: 210 20% 15%;
-    --card: 180 40% 95%;
-    --card-foreground: 210 20% 15%;
-    --popover: 180 40% 95%;
-    --popover-foreground: 210 20% 15%;
-    --primary: 180 100% 25.1%; /* #008080 */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 180 20% 85%;
-    --secondary-foreground: 180 100% 25.1%;
-    --muted: 180 20% 85%;
-    --muted-foreground: 210 20% 40%;
-    --accent: 120 100% 80.2%; /* #98FF98 */
-    --accent-foreground: 120 100% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 180 20% 80%;
-    --input: 180 20% 85%;
-    --ring: 180 100% 25.1%;
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 210 10% 10%;
-    --foreground: 180 5% 95%;
-    --card: 210 10% 15%;
-    --card-foreground: 180 5% 95%;
-    --popover: 210 10% 15%;
-    --popover-foreground: 180 5% 95%;
-    --primary: 180 100% 35%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 210 10% 20%;
-    --secondary-foreground: 180 5% 95%;
-    --muted: 210 10% 20%;
-    --muted-foreground: 180 5% 70%;
-    --accent: 120 100% 70%;
-    --accent-foreground: 120 100% 10%;
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 40% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 40% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 282 92% 64%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 210 10% 25%;
-    --input: 210 10% 25%;
-    --ring: 180 100% 35%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 282 92% 64%;
+    --radius: 0.5rem;
   }
 }
 

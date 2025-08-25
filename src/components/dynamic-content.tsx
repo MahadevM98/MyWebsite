@@ -14,9 +14,9 @@ export async function DynamicContent() {
   if (!content) return null;
 
   return (
-    <Card className="mt-8 bg-background/70 border-primary/20 shadow-lg text-left">
+    <Card className="mt-8 bg-secondary/30 border-primary/20 shadow-lg text-left backdrop-blur-sm">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2 text-lg font-headline">
+        <CardTitle className="flex items-center gap-2 text-lg">
           <Bot className="h-5 w-5 text-primary" />
           AI-Powered Update
         </CardTitle>

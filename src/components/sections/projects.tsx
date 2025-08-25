@@ -43,7 +43,7 @@ export function Projects() {
     <section id="projects" className="w-full py-20 md:py-32">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl md:text-4xl font-bold">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">
             GitHub Projects
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -55,24 +55,26 @@ export function Projects() {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="flex flex-col overflow-hidden bg-secondary/30 border-secondary group"
             >
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={600}
-                height={400}
-                className="w-full h-48 object-cover"
-                data-ai-hint={project.aiHint}
-              />
+              <div className="overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={600}
+                  height={400}
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  data-ai-hint={project.aiHint}
+                />
+              </div>
               <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
+                <CardTitle className="tracking-tight">{project.title}</CardTitle>
               </CardHeader>
               <CardContent className="flex-grow">
                 <CardDescription>{project.description}</CardDescription>
               </CardContent>
               <CardFooter>
-                <Button asChild className="w-full">
+                <Button asChild className="w-full" variant="outline">
                   <Link
                     href={project.link}
                     target="_blank"

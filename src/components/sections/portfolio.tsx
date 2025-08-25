@@ -44,10 +44,10 @@ const portfolioItems = [
 
 export function Portfolio() {
   return (
-    <section id="portfolio" className="w-full py-20 md:py-32 bg-secondary/50">
+    <section id="portfolio" className="w-full py-20 md:py-32 bg-secondary/30">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl md:text-4xl font-bold">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">
             Portfolio
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -60,18 +60,20 @@ export function Portfolio() {
           {portfolioItems.map((item, index) => (
             <Card
               key={index}
-              className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="flex flex-col overflow-hidden bg-secondary/30 border-secondary group"
             >
-              <Image
-                src={item.image}
-                alt={item.title}
-                width={600}
-                height={400}
-                className="w-full h-48 object-cover"
-                data-ai-hint={item.aiHint}
-              />
+              <div className="overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={600}
+                  height={400}
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  data-ai-hint={item.aiHint}
+                />
+              </div>
               <CardHeader>
-                <CardTitle>{item.title}</CardTitle>
+                <CardTitle className="tracking-tight">{item.title}</CardTitle>
                 <div className="flex flex-wrap gap-2 pt-2">
                   {item.tags.map((tag) => (
                     <Badge key={tag} variant="outline">
