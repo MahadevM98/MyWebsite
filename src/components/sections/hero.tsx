@@ -40,7 +40,7 @@ export function Hero() {
             <div className="absolute -bottom-12 right-8 size-12 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm"><Framer size={24} /></div>
             
             <Image 
-                src="https://picsum.photos/450/450" 
+                src="/mahadev-m.jpg" 
                 alt="Mahadev M" 
                 width={450} 
                 height={450} 

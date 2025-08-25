@@ -56,7 +56,7 @@ export function About() {
         <div className="grid md:grid-cols-5 gap-12 items-center">
           <div className="md:col-span-2 flex justify-center">
             <Image
-              src="https://picsum.photos/400/400"
+              src="/mahadev-m.jpg"
               alt="Mahadev M"
               width={400}
               height={400}

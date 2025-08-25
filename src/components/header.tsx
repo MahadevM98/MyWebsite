@@ -30,7 +30,7 @@ function Logo() {
           </defs>
           <g clipPath="url(#hexagon)">
             <Image
-              src="https://picsum.photos/100/100"
+              src="/mahadev-m.jpg"
               alt="Mahadev M"
               width={100}
               height={100}
