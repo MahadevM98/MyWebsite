@@ -39,13 +39,13 @@ export function Header() {
                 </Link>
             </Button>
             <Button asChild variant="glass" className="hidden md:flex">
-                <a href="/mahadev_m_cv.pdf" download>
+                <a href="https://drive.google.com/file/d/1NcVbj8U1ePeIVRtJCLmljYYpPUo1SX5j/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                     <Download className="mr-2 h-4 w-4" />
                     Download CV
                 </a>
             </Button>
             <Button asChild variant="glass" size="icon" className="md:hidden">
-                 <a href="/mahadev_m_cv.pdf" download title="Download CV">
+                 <a href="https://drive.google.com/file/d/1NcVbj8U1ePeIVRtJCLmljYYpPUo1SX5j/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="Download CV">
                     <Download className="h-5 w-5" />
                     <span className="sr-only">Download CV</span>
                 </a>
