@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Mail, Phone, MapPin, Linkedin, Link as LinkIcon } from "lucide-react";
 import Link from "next/link";
+import { DynamicContent } from "@/components/dynamic-content";
 
 const contactDetails = [
     { icon: Mail, text: "devminfo98@gmail.com", href: "mailto:devminfo98@gmail.com" },
@@ -17,11 +18,11 @@ export function Hero() {
     >
        <div className="absolute inset-0 bg-black/60 z-10"></div>
        <Image 
-        src="https://picsum.photos/1920/1080" 
+        src="https://images.unsplash.com/photo-1588382363644-5690b01c3b17?q=80&w=1920&auto=format&fit=crop" 
         alt="Background image of Mahadev M"
         fill
         className="object-cover"
-        data-ai-hint="professional headshot"
+        data-ai-hint="grey textile"
         priority
        />
       
@@ -40,6 +41,7 @@ export function Hero() {
                 </Link>
             ))}
           </div>
+          <DynamicContent />
         </div>
       </div>
     </section>
