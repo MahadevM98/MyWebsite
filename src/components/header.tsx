@@ -41,9 +41,11 @@ export function Header() {
                     </Link>
                 </Button>
             ))}
-             <Button variant="glass" size="icon" onClick={handleCopyLink} title="Copy Link">
-                <LinkIcon className="h-5 w-5" />
-                <span className="sr-only">Copy Link</span>
+             <Button asChild variant="glass" size="icon" title="Website">
+                <Link href="https://www.mwebs.io/" target="_blank">
+                    <LinkIcon className="h-5 w-5" />
+                    <span className="sr-only">Website</span>
+                </Link>
             </Button>
             <Button asChild variant="glass">
                 <a href="/mahadev_m_cv.pdf" download>
