@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "./ui/button";
 import { Linkedin, Mail, Link as LinkIcon, Download } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 
 const socialLinks = [
     { icon: Linkedin, href: "https://www.linkedin.com/in/mahadev-m-a08a57365", title: "LinkedIn"},
@@ -12,18 +11,18 @@ const socialLinks = [
 ]
 
 export function Header() {
-  const { toast } = useToast();
-
   return (
     <header className="fixed top-0 z-50 w-full p-4 md:p-8">
       <div className="flex items-center justify-between mx-auto max-w-7xl">
-        <Badge variant="secondary" className="border-primary/30 bg-secondary/50 backdrop-blur-sm">
-            <span className="relative flex h-2 w-2 mr-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
-            </span>
-            Open to work
-        </Badge>
+        <div className="flex items-center gap-4">
+            <Badge variant="secondary" className="border-primary/30 bg-secondary/50 backdrop-blur-sm">
+                <span className="relative flex h-2 w-2 mr-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+                </span>
+                Open to work
+            </Badge>
+        </div>
         <div className="flex items-center gap-2">
             {socialLinks.map((link) => (
                 <Button asChild variant="glass" size="icon" key={link.href}>
