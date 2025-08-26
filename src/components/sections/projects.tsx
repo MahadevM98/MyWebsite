@@ -35,33 +35,6 @@ const certifications = [
   },
 ];
 
-const projects = [
-  {
-    title: "Data-driven Marketing Dashboard",
-    description:
-      "An interactive dashboard built with R and Shiny to visualize marketing campaign performance and KPIs.",
-    link: "https://github.com",
-    image: "https://picsum.photos/600/400?random=1",
-    aiHint: "dashboard analytics",
-  },
-  {
-    title: "Customer Segmentation Analysis",
-    description:
-      "A data analysis project using SQL and Python to segment customers based on purchasing behavior for targeted marketing.",
-    link: "https://github.com",
-    image: "https://picsum.photos/600/400?random=2",
-    aiHint: "customer chart",
-  },
-  {
-    title: "SEO Keyword Opportunity Finder",
-    description:
-      "A script that leverages APIs to find low-competition, high-volume keywords to improve organic search rankings.",
-    link: "https://github.com",
-    image: "https://picsum.photos/600/400?random=3",
-    aiHint: "seo code",
-  },
-];
-
 export function Projects() {
   return (
     <section id="projects" className="w-full py-20 md:py-32">
@@ -71,7 +44,7 @@ export function Projects() {
             Certifications &amp; Projects
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-            A collection of my professional certifications and favorite GitHub repositories.
+            A collection of my professional certifications and GitHub repositories.
           </p>
         </div>
 
@@ -112,43 +85,14 @@ export function Projects() {
           ))}
         </div>
 
-        <h3 className="text-2xl md:text-3xl font-bold tracking-tighter mb-8 text-primary">GitHub Projects</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <Card
-              key={index}
-              className="flex flex-col overflow-hidden bg-secondary/30 border-secondary group"
-            >
-              <div className="overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={600}
-                  height={400}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  data-ai-hint={project.aiHint}
-                />
-              </div>
-              <CardHeader>
-                <CardTitle className="tracking-tight">{project.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <CardDescription>{project.description}</CardDescription>
-              </CardContent>
-              <CardFooter>
-                <Button asChild className="w-full" variant="outline">
-                  <Link
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Github className="mr-2 h-4 w-4" />
-                    View on GitHub
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
+        <div className="text-center">
+            <h3 className="text-2xl md:text-3xl font-bold tracking-tighter mb-8 text-primary">GitHub Projects</h3>
+            <Button asChild variant="glass" size="lg">
+                <Link href="https://github.com/MahadevM98?tab=repositories&q=&type=public&language=&sort=" target="_blank">
+                    <Github className="mr-2 h-5 w-5" />
+                    View All Projects on GitHub
+                </Link>
+            </Button>
         </div>
       </div>
     </section>
