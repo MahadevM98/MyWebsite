@@ -22,7 +22,7 @@ export function Hero() {
             Mahadev M
           </h1>
           
-          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-4">
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-4">
             {contactDetails.map((detail, index) => (
                 <Link key={index} href={detail.href} target="_blank" className="flex items-center gap-3 text-sm group">
                     <detail.icon className="h-5 w-5 text-primary" />
