@@ -1,37 +1,19 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Award, Github } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 const certifications = [
   {
     title: "Google Data Analytics Professional Certificate",
-    issuer: "Google",
-    link: "#",
-    image: "https://images.unsplash.com/photo-1662947190722-5d272f82a526?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8R29vZ2xlJTIwY2VydGlmaWNhdGlvbnxlbnwwfHx8fDE3NTYxNjExODZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    aiHint: "certificate data analytics",
+    link: "https://coursera.org/share/13508aaa8d2d4f0dd3a51f27e6350eb2",
   },
   {
     title: "Business Analysis & Process Management",
-    issuer: "Coursera",
-    link: "#",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8YnVzaW5lc3MlMjBhbmFseXNpc3xlbnwwfHx8fDE3NTYxNjEyMjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    aiHint: "certificate business analysis",
+    link: "https://coursera.org/share/6e41fa6338344c38e1178730701219fe",
   },
   {
     title: "Email Marketing Professional",
-    issuer: "Intuit Mailchimp",
-    link: "#",
-    image: "https://images.unsplash.com/photo-1603791445824-0050bd436b6d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8ZW1haWx8ZW58MHx8fHwxNzU2MTYxMjk3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    aiHint: "certificate email marketing",
+    link: "https://www.linkedin.com/learning/certificates/3967e7443c3a16256d6ace550f5780e17960e957ba9ee6198111e3735f7a08a1?trk=share_certificate",
   },
 ];
 
@@ -48,40 +30,19 @@ export function Projects() {
           </p>
         </div>
 
-        <h3 className="text-2xl md:text-3xl font-bold tracking-tighter mb-8 text-primary">Certifications</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <h3 className="text-2xl md:text-3xl font-bold tracking-tighter mb-8 text-primary text-center">Certifications</h3>
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-16">
           {certifications.map((cert, index) => (
-            <Card
-              key={index}
-              className="flex flex-col overflow-hidden bg-secondary/30 border-secondary group"
-            >
-              <div className="overflow-hidden">
-                <Image
-                  src={cert.image}
-                  alt={cert.title}
-                  width={600}
-                  height={400}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  data-ai-hint={cert.aiHint}
-                />
-              </div>
-              <CardHeader>
-                <CardTitle className="tracking-tight">{cert.title}</CardTitle>
-                <CardDescription>{cert.issuer}</CardDescription>
-              </CardHeader>
-              <CardFooter>
-                <Button asChild className="w-full" variant="outline">
-                  <Link
-                    href={cert.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Award className="mr-2 h-4 w-4" />
-                    View Certificate
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
+            <Button asChild variant="glass" size="lg" key={index}>
+              <Link
+                href={cert.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Award className="mr-2 h-4 w-4" />
+                {cert.title}
+              </Link>
+            </Button>
           ))}
         </div>
 
