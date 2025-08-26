@@ -17,7 +17,7 @@ export function Hero() {
     >
        <div className="absolute inset-0 bg-black/60 z-10"></div>
        <Image 
-        src="/mahadev-m.jpg" 
+        src="https://picsum.photos/1920/1080" 
         alt="Background image of Mahadev M"
         fill
         className="object-cover"
