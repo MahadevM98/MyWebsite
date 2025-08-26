@@ -1,6 +1,6 @@
 'use client';
 
-import { Home, Briefcase, User, Phone, Zap } from "lucide-react";
+import { Home, Briefcase, User, Phone } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -10,7 +10,6 @@ const navLinks = [
   { href: "#home", label: "Home", icon: Home },
   { href: "#about", label: "About", icon: User },
   { href: "#projects", label: "Projects", icon: Briefcase },
-  { href: "#portfolio", label: "Portfolio", icon: Zap },
   { href: "#contact", label: "Contact", icon: Phone },
 ];
 
@@ -23,7 +22,7 @@ export function MainNav() {
             {navLinks.map((link) => {
                 const isActive = pathname === link.href || (link.href.startsWith("#") && pathname === "/");
                 return (
-                <Button asChild variant="ghost" size="icon" key={link.href} className={cn("rounded-full h-12 w-12 flex-col text-xs gap-1 transition-transform duration-300 ease-in-out hover:scale-125", isActive && "bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground scale-110")}>
+                <Button asChild variant="ghost" size="icon" key={link.href} className={cn("rounded-full h-12 w-12 flex-col text-xs gap-1 transition-transform duration-300 ease-in-out hover:scale-[1.4]", isActive && "bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground scale-110")}>
                     <Link href={link.href} title={link.label}>
                         <link.icon className="h-5 w-5" />
                         <span className="sr-only">{link.label}</span>
