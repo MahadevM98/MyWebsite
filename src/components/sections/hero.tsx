@@ -1,5 +1,4 @@
-import Image from "next/image";
-import { Mail, Phone, MapPin, Linkedin, Link as LinkIcon } from "lucide-react";
+import { Mail, Phone, Linkedin, Link as LinkIcon } from "lucide-react";
 import Link from "next/link";
 import { DynamicContent } from "@/components/dynamic-content";
 
@@ -14,18 +13,8 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative w-full h-screen min-h-[700px] flex items-center"
+      className="relative w-full h-screen min-h-[700px] flex items-center bg-black"
     >
-       <div className="absolute inset-0 bg-black/60 z-10"></div>
-       <Image 
-        src="https://images.unsplash.com/photo-1588382363644-5690b01c3b17?q=80&w=1920&auto=format&fit=crop" 
-        alt="Background image of Mahadev M"
-        fill
-        className="object-cover"
-        data-ai-hint="grey textile"
-        priority
-       />
-      
       <div className="container px-4 md:px-6 z-20 relative">
         <div className="max-w-4xl text-left text-white">
           <span className="text-primary font-semibold tracking-wider uppercase">Digital Marketing Specialist | Data Analyst | vibe coder</span>
