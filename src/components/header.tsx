@@ -12,8 +12,8 @@ const socialLinks = [
 
 export function Header() {
   return (
-    <header className="fixed top-0 z-50 w-full p-4 md:p-8">
-      <div className="flex items-center justify-between mx-auto max-w-7xl">
+    <header className="fixed top-0 z-50 w-full p-4 md:px-6">
+      <div className="container flex items-center justify-between mx-auto">
         <div className="flex items-center gap-4">
             <Badge variant="secondary" className="border-primary/30 bg-secondary/50 backdrop-blur-sm">
                 <span className="relative flex h-2 w-2 mr-2">
