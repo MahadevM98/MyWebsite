@@ -5,7 +5,7 @@ import { DynamicContent } from "@/components/dynamic-content";
 const contactDetails = [
     { icon: Mail, text: "devminfo98@gmail.com", href: "mailto:devminfo98@gmail.com" },
     { icon: Phone, text: "+91 7406894741", href: "tel:+917406894741" },
-    { icon: Linkedin, text: "linkedin.com/in/mahadev-m", href: "https://www.linkedin.com/in/mahadev-m-a08a57365" },
+    { icon: Linkedin, text: "www.linkedin.com/in/mahadev-m-a08a57365", href: "https://www.linkedin.com/in/mahadev-m-a08a57365" },
     { icon: LinkIcon, text: "mwebs.io", href: "https://www.mwebs.io/" },
 ]
 
