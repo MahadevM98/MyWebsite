@@ -2,8 +2,8 @@ import { Header } from "@/components/header";
 import { Hero } from "@/components/sections/hero";
 import { About } from "@/components/sections/about";
 import { Projects } from "@/components/sections/projects";
-import { Contact } from "@/components/sections/contact";
 import { MainNav } from "@/components/main-nav";
+import { Quote } from "@/components/sections/quote";
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
         <Hero />
         <About />
         <Projects />
-        <Contact />
+        <Quote />
       </main>
       <MainNav />
     </div>

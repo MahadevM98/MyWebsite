@@ -1,6 +1,6 @@
 'use client';
 
-import { Home, Briefcase, User, Phone } from "lucide-react";
+import { Home, Briefcase, User, PenTool } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -10,7 +10,7 @@ const navLinks = [
   { href: "#home", label: "Home", icon: Home },
   { href: "#about", label: "About", icon: User },
   { href: "#projects", label: "Projects", icon: Briefcase },
-  { href: "#contact", label: "Contact", icon: Phone },
+  { href: "#quote", label: "Quote", icon: PenTool },
 ];
 
 export function MainNav() {
