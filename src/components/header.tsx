@@ -14,14 +14,6 @@ const socialLinks = [
 export function Header() {
   const { toast } = useToast();
 
-  const handleCopyLink = () => {
-    navigator.clipboard.writeText(window.location.href);
-    toast({
-      title: "Link Copied!",
-      description: "The link to this page has been copied to your clipboard.",
-    });
-  }
-
   return (
     <header className="fixed top-0 z-50 w-full p-4 md:p-8">
       <div className="flex items-center justify-between mx-auto max-w-7xl">
@@ -47,10 +39,16 @@ export function Header() {
                     <span className="sr-only">Website</span>
                 </Link>
             </Button>
-            <Button asChild variant="glass">
+            <Button asChild variant="glass" className="hidden md:flex">
                 <a href="/mahadev_m_cv.pdf" download>
                     <Download className="mr-2 h-4 w-4" />
                     Download CV
+                </a>
+            </Button>
+            <Button asChild variant="glass" size="icon" className="md:hidden">
+                 <a href="/mahadev_m_cv.pdf" download title="Download CV">
+                    <Download className="h-5 w-5" />
+                    <span className="sr-only">Download CV</span>
                 </a>
             </Button>
         </div>
