@@ -1,6 +1,5 @@
 import { Mail, Phone, Linkedin, Link as LinkIcon } from "lucide-react";
 import Link from "next/link";
-import { DynamicContent } from "@/components/dynamic-content";
 
 const contactDetails = [
     { icon: Mail, text: "devminfo98@gmail.com", href: "mailto:devminfo98@gmail.com" },
@@ -30,7 +29,6 @@ export function Hero() {
                 </Link>
             ))}
           </div>
-          <DynamicContent />
         </div>
       </div>
     </section>
